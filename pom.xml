@@ -30,8 +30,22 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-				</configuration>
+				   <configuration>
+          <cloudHubDeployment>
+            <muleVersion>${mule.version}</muleVersion> 
+            <!-- username password -->
+            <username>${anypoint.username}</username> 
+            <password>${anypoint.password}</password> 
+            <applicationName>${appname}</applicationName> 
+            <environment>${env}</environment> 
+            <businessGroup>${business}</businessGroup>
+<!--             <region>${cloudhub.region}</region> -->
+            <uri>https://anypoint.mulesoft.com</uri> 
+            <workerType>${vCore}</workerType> 
+            <workers>${workers}</workers>
+            <objectStoreV2>true</objectStoreV2>
+          </cloudHubDeployment>
+        </configuration>
 			</plugin>
 		</plugins>
 	</build>
